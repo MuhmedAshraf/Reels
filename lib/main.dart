@@ -5,7 +5,6 @@ import 'package:reels/Core/api_helper/dio_consumer.dart';
 import 'package:reels/Feature/01.Home/data/repo/videos_repo_implement.dart';
 import 'package:reels/Feature/01.Home/presentation/view_model/video_cubit/video_cubit.dart';
 import 'package:reels/Feature/01.Home/presentation/views/home_screen.dart';
-import 'package:video_player/video_player.dart';
 
 void main() {
   runApp(const Reals());

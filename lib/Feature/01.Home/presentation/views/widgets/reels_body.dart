@@ -13,6 +13,7 @@ class ReelsBody extends StatelessWidget {
       builder: (context, state) {
         if (state is VideoSuccess) {
           return PageView.builder(
+            physics: const BouncingScrollPhysics(),
             itemBuilder: (context, i) => VideoItem(videoModel: state.reels[i]),
             itemCount: state.reels.length,
             scrollDirection: Axis.vertical,

@@ -1,7 +1,5 @@
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reels/Feature/01.Home/presentation/view_model/video_cubit/video_cubit.dart';
-import 'package:video_player/video_player.dart';
 import '../../../data/models/video_model.dart';
 
 class VideoItem extends StatefulWidget {
@@ -14,13 +12,13 @@ class VideoItem extends StatefulWidget {
 }
 
 class _VideoItemState extends State<VideoItem> {
-  late VideoPlayerController controller;
+  late CachedVideoPlayerController controller;
 
   @override
   void initState() {
     super.initState();
 
-    controller = VideoPlayerController.network(widget.videoModel.video)
+    controller = CachedVideoPlayerController.network(widget.videoModel.video)
       ..initialize().then((_) => controller.play());
   }
 
@@ -46,7 +44,7 @@ class _VideoItemState extends State<VideoItem> {
       },
       child: AspectRatio(
         aspectRatio: controller.value.aspectRatio,
-        child: VideoPlayer(controller),
+        child: CachedVideoPlayer(controller),
       ),
     );
   }
